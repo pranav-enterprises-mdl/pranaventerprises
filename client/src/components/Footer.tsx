@@ -41,7 +41,7 @@ export default function Footer() {
                 <SiInstagram className="h-5 w-5 text-foreground" />
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919740007147"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-md bg-muted hover-elevate transition-all"
