@@ -1,9 +1,15 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -13,25 +19,50 @@ import {
 } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest, queryClient } from "@/lib/queryClient";
 
 export default function Contact() {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
+
+  const form = useForm<InsertContactMessage>({
+    resolver: zodResolver(insertContactMessageSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: "",
+    },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+  const contactMutation = useMutation({
+    mutationFn: async (data: InsertContactMessage) => {
+      const response = await apiRequest("POST", "/api/contact", data);
+      return await response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      form.reset();
+      queryClient.invalidateQueries({ queryKey: ["/api/contact-messages"] });
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const onSubmit = (data: InsertContactMessage) => {
+    contactMutation.mutate(data);
   };
 
   return (
@@ -52,79 +83,121 @@ export default function Contact() {
               <CardTitle>Send Us a Message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name *</Label>
-                  <Input
-                    id="name"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    data-testid="input-name"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Name *</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Your name"
+                            {...field}
+                            data-testid="input-name"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    data-testid="input-email"
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email *</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder="your.email@example.com"
+                            {...field}
+                            data-testid="input-email"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="+91 98765 43210"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    data-testid="input-phone"
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Phone</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="tel"
+                            placeholder="+91 98765 43210"
+                            {...field}
+                            value={field.value ?? ""}
+                            data-testid="input-phone"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="service">Service Interest</Label>
-                  <Select
-                    value={formData.service}
-                    onValueChange={(value) => setFormData({ ...formData, service: value })}
+                  <FormField
+                    control={form.control}
+                    name="service"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Service Interest</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          value={field.value ?? ""}
+                        >
+                          <FormControl>
+                            <SelectTrigger data-testid="select-service">
+                              <SelectValue placeholder="Select a service" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="offset">Offset Printing</SelectItem>
+                            <SelectItem value="digital">Digital Printing</SelectItem>
+                            <SelectItem value="flex">Flex Printing</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message *</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell us about your project..."
+                            rows={4}
+                            {...field}
+                            data-testid="input-message"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={contactMutation.isPending}
+                    data-testid="button-submit"
                   >
-                    <SelectTrigger id="service" data-testid="select-service">
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="offset">Offset Printing</SelectItem>
-                      <SelectItem value="digital">Digital Printing</SelectItem>
-                      <SelectItem value="flex">Flex Printing</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us about your project..."
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    required
-                    data-testid="input-message"
-                  />
-                </div>
-
-                <Button type="submit" className="w-full" data-testid="button-submit">
-                  Send Message
-                </Button>
-              </form>
+                    {contactMutation.isPending ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              </Form>
             </CardContent>
           </Card>
 
