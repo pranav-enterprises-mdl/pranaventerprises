@@ -1,0 +1,52 @@
+23:45:23.019 Running build in Washington, D.C., USA (East) – iad1
+23:45:23.019 Build machine configuration: 2 cores, 8 GB
+23:45:23.184 Cloning github.com/pranav-enterprises-mdl/pranaventerprisesmdl (Branch: main, Commit: 6e2e913)
+23:45:23.185 Previous build caches not available.
+23:45:24.043 Cloning completed: 859.000ms
+23:45:24.426 Running "vercel build"
+23:45:24.812 Vercel CLI 48.10.2
+23:45:25.417 Installing dependencies...
+23:45:29.899 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+23:45:29.932 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+23:45:34.670 
+23:45:34.671 added 478 packages in 9s
+23:45:34.671 
+23:45:34.671 64 packages are looking for funding
+23:45:34.671   run `npm fund` for details
+23:45:34.718 Running "npm run build"
+23:45:34.833 
+23:45:34.833 > rest-express@1.0.0 build
+23:45:34.833 > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+23:45:34.834 
+23:45:35.107 [36mvite v5.4.20 [32mbuilding for production...[36m[39m
+23:45:35.160 transforming...
+23:45:36.660 
+23:45:36.661 A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+23:45:40.386 [32m✓[39m 1846 modules transformed.
+23:45:40.762 rendering chunks...
+23:45:40.784 computing gzip size...
+23:45:40.801 [2m../dist/public/[22m[32mindex.html                                                  [39m[1m[2m    1.38 kB[22m[1m[22m[2m │ gzip:   0.61 kB[22m
+23:45:40.801 [2m../dist/public/[22m[2massets/[22m[32mPackaging_portfolio_sample_e4d40dcc-CbhpKNc5.png     [39m[1m[2m  944.61 kB[22m[1m[22m
+23:45:40.801 [2m../dist/public/[22m[2massets/[22m[32mMenu_printing_portfolio_b14f7e89-DjfxLqMv.png        [39m[1m[2m1,054.02 kB[22m[1m[22m
+23:45:40.801 [2m../dist/public/[22m[2massets/[22m[32mBrochures_portfolio_sample_b4690d23-BNC8icQw.png     [39m[1m[2m1,069.39 kB[22m[1m[22m
+23:45:40.801 [2m../dist/public/[22m[2massets/[22m[32mBusiness_cards_portfolio_52375b6c-BGYhOxxu.png       [39m[1m[2m1,129.61 kB[22m[1m[22m
+23:45:40.802 [2m../dist/public/[22m[2massets/[22m[32mWedding_invitations_portfolio_44293b59-BUamdAQy.png  [39m[1m[2m1,256.88 kB[22m[1m[22m
+23:45:40.802 [2m../dist/public/[22m[2massets/[22m[32mDigital_printing_service_6e77e433-Bg4-wbqy.png       [39m[1m[2m1,422.87 kB[22m[1m[22m
+23:45:40.802 [2m../dist/public/[22m[2massets/[22m[32mBanner_portfolio_sample_3769e669-CSe9lhws.png        [39m[1m[2m1,453.64 kB[22m[1m[22m
+23:45:40.802 [2m../dist/public/[22m[2massets/[22m[32mFlex_printing_service_a3f8a7e6-Abe6VDOe.png          [39m[1m[2m1,546.59 kB[22m[1m[22m
+23:45:40.802 [2m../dist/public/[22m[2massets/[22m[32mOffset_printing_service_aa173642-BXzvCow3.png        [39m[1m[2m1,621.56 kB[22m[1m[22m
+23:45:40.802 [2m../dist/public/[22m[2massets/[22m[32mHero_printing_press_facility_146d9273-DpssLFag.png   [39m[1m[2m1,740.71 kB[22m[1m[22m
+23:45:40.802 [2m../dist/public/[22m[2massets/[22m[35mindex-CpXAcjFh.css                                   [39m[1m[2m   74.48 kB[22m[1m[22m[2m │ gzip:  12.05 kB[22m
+23:45:40.803 [2m../dist/public/[22m[2massets/[22m[36mindex-CcejYop-.js                                    [39m[1m[2m  468.03 kB[22m[1m[22m[2m │ gzip: 145.87 kB[22m
+23:45:40.803 [32m✓ built in 5.67s[39m
+23:45:40.844 
+23:45:40.844   dist/index.js  7.7kb
+23:45:40.845 
+23:45:40.845 ⚡ Done in 5ms
+23:45:40.943 Build Completed in /vercel/output [16s]
+23:45:41.050 Deploying outputs...
+23:45:43.553 Deployment completed
+23:45:44.155 Creating build cache...
+23:45:56.986 Created build cache: 12.829s
+23:45:56.991 Uploading build cache [77.52 MB]
+23:45:58.044 Build cache uploaded: 1.059s
