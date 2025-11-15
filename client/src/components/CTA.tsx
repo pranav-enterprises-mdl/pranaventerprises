@@ -27,8 +27,8 @@ export default function CTA() {
             <Phone className="h-5 w-5" />
             <span className="text-sm">
               Or call us at{" "}
-              <a href="tel:+919876543210" className="text-primary font-medium hover:underline">
-                +91 98765 43210
+              <a href="tel:+919740007147" className="text-primary font-medium hover:underline">
+                +91 9740007147
               </a>
             </span>
           </div>

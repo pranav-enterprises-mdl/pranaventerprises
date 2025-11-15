@@ -132,16 +132,16 @@ export default function Footer() {
               <li className="flex gap-2 text-sm">
                 <MapPin className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">
-                  Main Street, Mudhol, Karnataka 587313
+                  Pranav Printing Press, Mudhol, Karnataka 587313
                 </span>
               </li>
               <li className="flex gap-2 text-sm">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919740007147"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  +91 98765 43210
+                  +91 9740007147
                 </a>
               </li>
               <li className="flex gap-2 text-sm">

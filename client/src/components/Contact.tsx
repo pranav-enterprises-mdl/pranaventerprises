@@ -212,9 +212,11 @@ export default function Contact() {
                   <div>
                     <div className="font-semibold text-foreground">Address</div>
                     <div className="text-muted-foreground">
-                      Main Street, Mudhol
+                      Pranav Printing Press
                       <br />
-                      Bagalkot District, Karnataka 587313
+                      Mudhol, Bagalkot District
+                      <br />
+                      Karnataka 587313
                     </div>
                   </div>
                 </div>
@@ -224,10 +226,10 @@ export default function Contact() {
                   <div>
                     <div className="font-semibold text-foreground">Phone</div>
                     <a
-                      href="tel:+919876543210"
+                      href="tel:+919740007147"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +91 98765 43210
+                      +91 9740007147
                     </a>
                   </div>
                 </div>
@@ -261,9 +263,19 @@ export default function Contact() {
 
             <Card className="bg-muted/50">
               <CardContent className="p-6">
-                <div className="aspect-video w-full bg-muted rounded-md flex items-center justify-center">
-                  <MapPin className="h-12 w-12 text-muted-foreground" />
-                </div>
+                <a
+                  href="https://www.google.com/maps/place/Pranav+Printing+Press/@16.32598,75.2880573,17z/data=!4m14!1m7!3m6!1s0x3bc74192cbbe0859:0x743a60a69ee1be6e!2sPranav+Printing+Press!8m2!3d16.32598!4d75.2906322!16s%2Fg%2F11mvryftsw!3m5!1s0x3bc74192cbbe0859:0x743a60a69ee1be6e!8m2!3d16.32598!4d75.2906322!16s%2Fg%2F11mvryftsw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="aspect-video w-full bg-muted rounded-md flex items-center justify-center hover-elevate transition-all">
+                    <div className="text-center">
+                      <MapPin className="h-12 w-12 text-primary mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">View on Google Maps</p>
+                    </div>
+                  </div>
+                </a>
               </CardContent>
             </Card>
           </div>
