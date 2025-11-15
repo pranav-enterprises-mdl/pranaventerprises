@@ -239,10 +239,10 @@ export default function Contact() {
                   <div>
                     <div className="font-semibold text-foreground">Email</div>
                     <a
-                      href="mailto:info@pranaventerprises.com"
+                      href="mailto:pranaventerprisesmdl@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      info@pranaventerprises.com
+                      pranaventerprisesmdl@gmail.com
                     </a>
                   </div>
                 </div>
