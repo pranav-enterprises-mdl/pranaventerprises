@@ -212,7 +212,7 @@ export default function Contact() {
                   <div>
                     <div className="font-semibold text-foreground">Address</div>
                     <div className="text-muted-foreground">
-                      Pranav Printing Press
+                      Pranav Enterprises
                       <br />
                       Mudhol, Bagalkot District
                       <br />

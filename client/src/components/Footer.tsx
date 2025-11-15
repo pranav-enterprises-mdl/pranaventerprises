@@ -132,7 +132,7 @@ export default function Footer() {
               <li className="flex gap-2 text-sm">
                 <MapPin className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">
-                  Pranav Printing Press, Mudhol, Karnataka 587313
+                  Pranav Enterprises, Mudhol, Karnataka 587313
                 </span>
               </li>
               <li className="flex gap-2 text-sm">
