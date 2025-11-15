@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import logoImage from "@assets/pranav-logo.png";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +31,8 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           <Link href="/" data-testid="link-home">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <img src={logoImage} alt="Pranav Enterprises Logo" className="h-10 w-auto" />
               <div className="font-bold text-xl text-foreground">
                 Pranav <span className="text-primary">Enterprises</span>
               </div>
