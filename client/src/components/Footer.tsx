@@ -147,10 +147,10 @@ export default function Footer() {
               <li className="flex gap-2 text-sm">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                 <a
-                  href="mailto:pranaventerprisesmdl@gmail.com"
+                  href="mailto:info@pranaventmdl.co.in"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  pranaventerprisesmdl@gmail.com
+                  info@pranaventmdl.co.in
                 </a>
               </li>
             </ul>
