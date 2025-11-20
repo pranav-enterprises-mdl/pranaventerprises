@@ -5,28 +5,28 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Rajesh Kumar",
-    business: "Kumar Textiles",
+    business: "Myra Fashion",
     content: "Outstanding quality and service! Pranav Enterprises delivered our business cards and brochures on time with exceptional print quality. Highly recommended!",
     rating: 5,
     initials: "RK",
   },
   {
     name: "Priya Sharma",
-    business: "Sharma Events",
+    business: "Aditi Honda",
     content: "They handled all our wedding invitation printing beautifully. The attention to detail and customer service was excellent. Will definitely use again!",
     rating: 5,
     initials: "PS",
   },
   {
     name: "Amit Patel",
-    business: "Patel Motors",
+    business: "Hosur Motowings",
     content: "Great experience with their flex printing service. The outdoor banners came out vibrant and weather-resistant. Perfect for our showroom!",
     rating: 5,
     initials: "AP",
   },
   {
     name: "Sneha Desai",
-    business: "Desai Sweets",
+    business: "Dalmia Cements",
     content: "Professional team and competitive pricing. Our menu cards and packaging materials are always printed to perfection. Thank you!",
     rating: 5,
     initials: "SD",
