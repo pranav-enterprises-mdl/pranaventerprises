@@ -261,21 +261,21 @@ export default function Contact() {
               </CardContent>
             </Card>
 
-            <Card className="bg-muted/50">
-              <CardContent className="p-6">
-                <a
-                  href="https://www.google.com/maps/place/Pranav+Printing+Press/@16.32598,75.2880573,17z/data=!4m14!1m7!3m6!1s0x3bc74192cbbe0859:0x743a60a69ee1be6e!2sPranav+Printing+Press!8m2!3d16.32598!4d75.2906322!16s%2Fg%2F11mvryftsw!3m5!1s0x3bc74192cbbe0859:0x743a60a69ee1be6e!8m2!3d16.32598!4d75.2906322!16s%2Fg%2F11mvryftsw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="aspect-video w-full bg-muted rounded-md flex items-center justify-center hover-elevate transition-all">
-                    <div className="text-center">
-                      <MapPin className="h-12 w-12 text-primary mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">View on Google Maps</p>
-                    </div>
-                  </div>
-                </a>
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <div className="aspect-video w-full">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.8820447987666!2d75.2880573!3d16.32598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc74192cbbe0859%3A0x743a60a69ee1be6e!2sPranav%20Printing%20Press!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Pranav Enterprises Location"
+                    data-testid="map-embed"
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>
