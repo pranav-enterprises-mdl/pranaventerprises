@@ -4,32 +4,28 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Rajesh Kumar",
     business: "Myra Fashion",
     content: "Outstanding quality and service! Pranav Enterprises delivered our business cards and brochures on time with exceptional print quality. Highly recommended!",
     rating: 5,
-    initials: "RK",
+    initials: "MF",
   },
   {
-    name: "Priya Sharma",
     business: "Aditi Honda",
     content: "They handled all our wedding invitation printing beautifully. The attention to detail and customer service was excellent. Will definitely use again!",
     rating: 5,
-    initials: "PS",
+    initials: "AH",
   },
   {
-    name: "Amit Patel",
     business: "Hosur Motowings",
     content: "Great experience with their flex printing service. The outdoor banners came out vibrant and weather-resistant. Perfect for our showroom!",
     rating: 5,
-    initials: "AP",
+    initials: "HM",
   },
   {
-    name: "Sneha Desai",
     business: "Dalmia Cements",
     content: "Professional team and competitive pricing. Our menu cards and packaging materials are always printed to perfection. Thank you!",
     rating: 5,
-    initials: "SD",
+    initials: "DC",
   },
 ];
 
@@ -68,9 +64,6 @@ export default function Testimonials() {
                   </Avatar>
                   <div>
                     <div className="font-semibold text-foreground">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
                       {testimonial.business}
                     </div>
                   </div>
