@@ -27,6 +27,13 @@ const services = [
 ];
 
 export default function Services() {
+  const scrollToContact = () => {
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="services" className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,6 +74,7 @@ export default function Services() {
                   <Button
                     variant="ghost"
                     className="w-full"
+                    onClick={scrollToContact}
                     data-testid={`button-learn-more-${index}`}
                   >
                     Learn More
