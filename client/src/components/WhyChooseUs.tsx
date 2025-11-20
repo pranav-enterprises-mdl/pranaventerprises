@@ -27,16 +27,16 @@ const benefits = [
 export default function WhyChooseUs() {
   return (
     <section id="about" className="py-16 md:py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+          <div className="order-2 lg:order-1 lg:col-span-2">
             <div
-              className="w-full h-96 lg:h-full rounded-lg bg-cover bg-center shadow-lg"
+              className="w-full h-96 lg:h-[500px] rounded-lg bg-cover bg-center shadow-lg"
               style={{ backgroundImage: `url(${facilityImage})` }}
             />
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 lg:col-span-3">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Why Choose Us
             </h2>
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
               Experience the difference of working with a printing partner that combines expertise, technology, and dedication to deliver outstanding results.
             </p>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex gap-4" data-testid={`benefit-${index}`}>
                   <div className="flex-shrink-0">
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
                     <h3 className="font-semibold text-foreground mb-1">
                       {benefit.title}
                     </h3>
-                    <p className="text-muted-foreground">{benefit.description}</p>
+                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
                   </div>
                 </div>
               ))}
